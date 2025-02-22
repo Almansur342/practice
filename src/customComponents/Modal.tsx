@@ -1,10 +1,15 @@
 import { Button } from '@/components/ui/button'
 import { RootState } from '@/redux/store'
-import { SingleUserProps } from '@/typeScriptType/Type'
-import { useSelector } from 'react-redux'
 
-export default function Modal({id,show,setShow}:SingleUserProps) {
-  const {users,loading} = useSelector((state:RootState)=>state.user) 
+import { SetStateAction,Dispatch } from 'react';
+import { useSelector} from 'react-redux'
+export type ModalProps = {
+  id: string; // `id` is a string
+  show: boolean; // `show` is a boolean
+  setShow: Dispatch<SetStateAction<boolean>>; // `setShow` is a state setter for boolean
+};
+export default function Modal({id,setShow}:ModalProps) {
+  const {users} = useSelector((state:RootState)=>state.user) 
   const single = users.filter((p) => p.id === id)[0]; // Access the first element of the filtered array
 
   // Handle the case when no user is found

@@ -16,6 +16,6 @@ export type TuserDetail = {
 
 export type SingleUserProps = {
   user: TUser;
-  setId: Dispatch<SetStateAction<string | undefined>>; // 
-  setShow: Dispatch<SetStateAction<boolean | undefined>>; // 
+  setId: Dispatch<SetStateAction<string>>; // 
+  setShow: Dispatch<SetStateAction<boolean>>; // 
 };

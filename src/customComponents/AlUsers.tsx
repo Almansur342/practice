@@ -7,7 +7,7 @@ import { TUser } from "@/typeScriptType/Type";
 import Modal from "./Modal";
 
 export default function AllUsers() {
-  const [id,setId] = useState();
+  const [id,setId] = useState('');
   const [show,setShow] = useState(false);
   const dispatch = useAppDispatch();
   const {users,loading} = useSelector((state:RootState)=>state.user) 
